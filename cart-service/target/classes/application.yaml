@@ -1,0 +1,22 @@
+server:
+  port: 8082
+
+feign:
+  okhttp:
+    enabled: true
+
+hm:
+  db:
+    database: hm-cart
+
+  swagger:
+    title: 黑马商城购物车服务接口文档
+    description: "黑马商城购物车服务接口文档"
+    package: com.hmall.cart.controller
+spring:
+    sentinel:
+      transport:
+        dashboard: localhost:8090
+
+seata:
+  data-source-proxy-mode: XA
