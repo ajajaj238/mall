@@ -18,3 +18,5 @@ spring:
 
 seata:
   data-source-proxy-mode: XA
+  enabled: false
+

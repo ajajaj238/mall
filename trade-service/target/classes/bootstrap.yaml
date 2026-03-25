@@ -1,8 +1,8 @@
 spring:
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8848
       config:
+        server-addr: 127.0.0.1:8848
         file-extension: yaml
         shared-configs:
           - data-id: shared-jdbc.yaml
@@ -13,4 +13,4 @@ spring:
   application:
     name: trade-service  #微服务名称
   profiles:
-    active: dev
+    active: local
