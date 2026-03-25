@@ -14,7 +14,6 @@ import java.util.List;
  * </p>
  *
  * @author zhj
- * @since 2023-05-05
  */
 public interface IItemService extends IService<Item> {
 

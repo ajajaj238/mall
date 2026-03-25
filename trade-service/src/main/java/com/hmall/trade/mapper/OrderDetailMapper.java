@@ -10,7 +10,6 @@ import com.hmall.trade.domin.po.OrderDetail;
  * </p>
  *
  * @author zhj
- * @since 2023-05-05
  */
 public interface OrderDetailMapper extends BaseMapper<OrderDetail> {
 

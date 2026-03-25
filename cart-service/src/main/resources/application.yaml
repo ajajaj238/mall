@@ -10,13 +10,16 @@ hm:
     database: hm-cart
 
   swagger:
-    title: 黑马商城购物车服务接口文档
-    description: "黑马商城购物车服务接口文档"
+    title: 星链商城购物车服务接口文档
+    description: "星链商城购物车服务接口文档"
     package: com.hmall.cart.controller
+
 spring:
+  cloud:
     sentinel:
       transport:
         dashboard: localhost:8090
+      http-method-specify: true # 开启请求方式前缀
 
 seata:
   data-source-proxy-mode: XA

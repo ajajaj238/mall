@@ -9,7 +9,6 @@ spring:
           - data-id: shared-log.yaml
           - data-id: shared-swagger.yaml
 
-
   application:
     name: item-service  #微服务名称
   profiles:

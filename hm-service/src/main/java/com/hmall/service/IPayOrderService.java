@@ -11,7 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author zhj
- * @since 2023-05-16
  */
 public interface IPayOrderService extends IService<PayOrder> {
 

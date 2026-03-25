@@ -10,7 +10,6 @@ import com.hmall.user.domin.po.Address;
  * </p>
  *
  * @author zhj
- * @since 2023-05-05
  */
 public interface AddressMapper extends BaseMapper<Address> {
 

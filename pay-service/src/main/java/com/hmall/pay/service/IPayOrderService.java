@@ -12,7 +12,6 @@ import com.hmall.pay.domin.po.PayOrder;
  * </p>
  *
  * @author zhj
- * @since 2023-05-16
  */
 public interface IPayOrderService extends IService<PayOrder> {
 

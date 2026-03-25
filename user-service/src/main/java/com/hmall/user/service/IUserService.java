@@ -12,7 +12,6 @@ import com.hmall.user.domin.vo.UserLoginVO;
  * </p>
  *
  * @author zhj
- * @since 2023-05-05
  */
 public interface IUserService extends IService<User> {
 

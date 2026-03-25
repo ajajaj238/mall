@@ -27,10 +27,10 @@ logging:
 knife4j:
   enable: true
   openapi:
-    title: 黑马商城用户管理接口文档
-    description: "黑马商城用户管理接口文档"
+    title: 星链商城用户管理接口文档
+    description: "星链商城用户管理接口文档"
     email: zhanghuyi@itcast.cn
-    concat: 虎哥
+    concat: zhj
     url: https://www.itcast.cn
     version: v1.0.0
     group:

@@ -5,8 +5,8 @@ hm:
   db:
     database: hm-trade
   swagger:
-    title: 黑马商城交易服务接口文档
-    desc: "黑马商城交易服务接口文档"
+    title: 星链商城交易服务接口文档
+    desc: "星链商城交易服务接口文档"
     package: com.hmall.trade.controller
 spring:
   rabbitmq:

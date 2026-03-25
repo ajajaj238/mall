@@ -24,6 +24,7 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -44,6 +45,9 @@ public class ItemServiceImpl extends ServiceImpl<ItemMapper, Item> implements II
 
     @Autowired
     private RestHighLevelClient client;
+
+    @Value("${hm.elasticsearch.host}")
+    private String elasticsearchHost;
 
     @Override
     @Transactional
@@ -70,7 +74,7 @@ public class ItemServiceImpl extends ServiceImpl<ItemMapper, Item> implements II
     public PageDTO<ItemDTO> searchofes(ItemPageQuery query) throws IOException {
 
         client = new RestHighLevelClient(RestClient.builder(
-                HttpHost.create("http://192.168.40.130:9200")
+                HttpHost.create(elasticsearchHost)
         ));
 
         SearchRequest request = new SearchRequest("items");
@@ -98,6 +102,8 @@ public class ItemServiceImpl extends ServiceImpl<ItemMapper, Item> implements II
         }
 
         request.source().query(boolQuery);
+        //设置追踪真实总数，突破10000限制
+        request.source().trackTotalHits(true);
         //分页
         int pageSize = query.getPageSize();
         int pageNo = query.getPageNo();
