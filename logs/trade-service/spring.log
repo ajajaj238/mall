@@ -5091,3 +5091,172 @@ ip=192.168.111.1
 22:11:47:522 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
 22:11:47:523 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:11:47.519856300(LocalDateTime), 3(Integer)
 22:11:47:524 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:12:17:537 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:12:17:537 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:12:17.535761400(LocalDateTime), 3(Integer)
+22:12:17:538 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:12:47:554 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:12:47:555 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:12:47.551809700(LocalDateTime), 3(Integer)
+22:12:47:556 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:13:17:572 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:13:17:572 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:13:17.569493900(LocalDateTime), 3(Integer)
+22:13:17:574 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:13:47:592 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:13:47:592 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:13:47.590651400(LocalDateTime), 3(Integer)
+22:13:47:593 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:14:17:607 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:14:17:607 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:14:17.594780300(LocalDateTime), 3(Integer)
+22:14:17:613 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:14:47:617 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:14:47:617 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:14:47.614703(LocalDateTime), 3(Integer)
+22:14:47:619 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:15:17:634 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:15:17:634 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:15:17.621969900(LocalDateTime), 3(Integer)
+22:15:17:637 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:15:47:656 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:15:47:657 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:15:47.653898100(LocalDateTime), 3(Integer)
+22:15:47:657 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:16:17:666 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:16:17:666 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:16:17.663055200(LocalDateTime), 3(Integer)
+22:16:17:667 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:16:47:682 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:16:47:682 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:16:47.679180500(LocalDateTime), 3(Integer)
+22:16:47:683 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:17:17:696 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:17:17:696 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:17:17.694163100(LocalDateTime), 3(Integer)
+22:17:17:697 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:17:47:703 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:17:47:703 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:17:47.702032200(LocalDateTime), 3(Integer)
+22:17:47:705 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:18:17:707 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:18:17:708 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:18:17.706071200(LocalDateTime), 3(Integer)
+22:18:17:709 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:18:47:713 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:18:47:713 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:18:47.710612400(LocalDateTime), 3(Integer)
+22:18:47:717 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:19:17:722 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:19:17:722 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:19:17.720699300(LocalDateTime), 3(Integer)
+22:19:17:723 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:19:46:405 DEBUG 17344 --- [scheduling-1] c.h.trade.mapper.OrderMapper.selectList  : ==>  Preparing: SELECT id,total_fee,payment_type,user_id,status,create_time,pay_time,consign_time,end_time,close_time,comment_time,update_time FROM `order` WHERE (status = ? AND create_time <= ?)
+22:19:46:405 DEBUG 17344 --- [scheduling-1] c.h.trade.mapper.OrderMapper.selectList  : ==> Parameters: 1(Integer), 2026-05-23T21:49:46.396437300(LocalDateTime)
+22:19:46:411 DEBUG 17344 --- [scheduling-1] c.h.trade.mapper.OrderMapper.selectList  : <==      Total: 0
+22:19:47:736 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:19:47:736 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:19:47.735216300(LocalDateTime), 3(Integer)
+22:19:47:738 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:20:17:747 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:20:17:747 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:20:17.745771800(LocalDateTime), 3(Integer)
+22:20:17:748 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:20:47:761 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:20:47:762 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:20:47.758594(LocalDateTime), 3(Integer)
+22:20:47:763 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:21:17:769 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:21:17:769 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:21:17.768171700(LocalDateTime), 3(Integer)
+22:21:17:771 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:21:47:777 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:21:47:778 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:21:47.774409100(LocalDateTime), 3(Integer)
+22:21:47:779 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:22:17:784 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:22:17:784 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:22:17.782609400(LocalDateTime), 3(Integer)
+22:22:17:785 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:22:47:795 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:22:47:796 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:22:47.792051200(LocalDateTime), 3(Integer)
+22:22:47:797 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:23:17:828 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:23:17:829 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:23:17.811877(LocalDateTime), 3(Integer)
+22:23:17:838 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:23:47:842 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:23:47:842 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:23:47.840366200(LocalDateTime), 3(Integer)
+22:23:47:843 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:24:17:855 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:24:17:855 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:24:17.850096100(LocalDateTime), 3(Integer)
+22:24:17:856 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:24:47:869 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:24:47:869 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:24:47.867650900(LocalDateTime), 3(Integer)
+22:24:47:870 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:25:17:888 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:25:17:889 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:25:17.884874(LocalDateTime), 3(Integer)
+22:25:17:890 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:25:47:901 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:25:47:901 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:25:47.899272(LocalDateTime), 3(Integer)
+22:25:47:904 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:26:17:912 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:26:17:912 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:26:17.909947300(LocalDateTime), 3(Integer)
+22:26:17:913 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:26:47:929 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:26:47:929 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:26:47.927094800(LocalDateTime), 3(Integer)
+22:26:47:930 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:27:17:942 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:27:17:942 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:27:17.940748300(LocalDateTime), 3(Integer)
+22:27:17:943 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:27:47:959 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:27:47:960 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:27:47.956987400(LocalDateTime), 3(Integer)
+22:27:47:962 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:28:17:974 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:28:17:974 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:28:17.971823400(LocalDateTime), 3(Integer)
+22:28:17:976 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:28:47:994 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:28:47:994 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:28:47.992004400(LocalDateTime), 3(Integer)
+22:28:47:995 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:29:18:011 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:29:18:011 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:29:18.009383800(LocalDateTime), 3(Integer)
+22:29:18:014 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:29:48:027 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:29:48:028 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:29:48.026342800(LocalDateTime), 3(Integer)
+22:29:48:029 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:30:18:039 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:30:18:039 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:30:18.038392500(LocalDateTime), 3(Integer)
+22:30:18:041 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:30:48:046 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:30:48:046 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:30:48.042815600(LocalDateTime), 3(Integer)
+22:30:48:047 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:31:18:050 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:31:18:050 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:31:18.049285600(LocalDateTime), 3(Integer)
+22:31:18:051 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:31:48:054 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:31:48:054 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:31:48.053554(LocalDateTime), 3(Integer)
+22:31:48:055 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:32:18:057 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:32:18:057 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:32:18.056719100(LocalDateTime), 3(Integer)
+22:32:18:059 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:32:48:061 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:32:48:061 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:32:48.059817400(LocalDateTime), 3(Integer)
+22:32:48:062 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:33:18:025  WARN 17344 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+22:33:18:025  WARN 17344 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+22:33:18:025  WARN 17344 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+22:33:18:026  WARN 17344 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+22:33:18:039  INFO 17344 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+22:33:18:041  INFO 17344 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+22:33:18:064 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==>  Preparing: SELECT id,business_id,business_type,message_content,exchange_name,routing_key,status,retry_count,max_retry,next_retry_time,create_time,update_time FROM local_message WHERE (status = ? AND next_retry_time <= ? AND retry_count < ?)
+22:33:18:064 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : ==> Parameters: 0(Integer), 2026-05-23T22:33:18.063028400(LocalDateTime), 3(Integer)
+22:33:18:066 DEBUG 17344 --- [scheduling-1] c.h.c.m.LocalMessageMapper.selectList    : <==      Total: 0
+22:33:18:259  INFO 17344 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+22:33:18:551  INFO 17344 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+22:33:18:574  INFO 17344 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+22:33:18:579  INFO 17344 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+22:33:18:630  INFO 17344 --- [nacos-grpc-client-executor-818] com.alibaba.nacos.common.remote.client   : [a6978790-2215-44e5-8da6-90a3346990d4] Receive server push request, request = NotifySubscriberRequest, requestId = 76
+22:33:18:638  INFO 17344 --- [nacos-grpc-client-executor-818] com.alibaba.nacos.common.remote.client   : [a6978790-2215-44e5-8da6-90a3346990d4] Ack server push request, request = NotifySubscriberRequest, requestId = 76
+22:33:18:639  INFO 17344 --- [nacos-grpc-client-executor-819] com.alibaba.nacos.common.remote.client   : [a6978790-2215-44e5-8da6-90a3346990d4] Receive server push request, request = NotifySubscriberRequest, requestId = 77
+22:33:18:648  INFO 17344 --- [nacos-grpc-client-executor-819] com.alibaba.nacos.common.remote.client   : [a6978790-2215-44e5-8da6-90a3346990d4] Ack server push request, request = NotifySubscriberRequest, requestId = 77
+22:33:18:649  INFO 17344 --- [nacos-grpc-client-executor-820] com.alibaba.nacos.common.remote.client   : [a6978790-2215-44e5-8da6-90a3346990d4] Receive server push request, request = NotifySubscriberRequest, requestId = 78
+22:33:18:655  INFO 17344 --- [nacos-grpc-client-executor-820] com.alibaba.nacos.common.remote.client   : [a6978790-2215-44e5-8da6-90a3346990d4] Ack server push request, request = NotifySubscriberRequest, requestId = 78
+22:33:18:887  INFO 17344 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+22:33:18:887  INFO 17344 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@24bccb60[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+22:33:18:887  INFO 17344 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1779543283742_127.0.0.1_65532
+22:33:18:888  INFO 17344 --- [nacos-grpc-client-executor-821] c.a.n.c.remote.client.grpc.GrpcClient    : [1779543283742_127.0.0.1_65532]Ignore complete event,isRunning:false,isAbandon=false
+22:33:18:889  INFO 17344 --- [SpringContextShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@1cbd0ef[Running, pool size = 8, active threads = 0, queued tasks = 0, completed tasks = 822]
+22:33:18:911  INFO 17344 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+22:33:18:920  INFO 17344 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+22:33:18:922  INFO 17344 --- [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+22:33:18:922  INFO 17344 --- [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
+22:33:18:925  INFO 17344 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel inactive: [id: 0x821a2545, L:/127.0.0.1:65513 ! R:/127.0.0.1:8091]
+22:33:18:925  INFO 17344 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.netty.NettyClientChannelManager  : return to pool, rm channel:[id: 0x821a2545, L:/127.0.0.1:65513 ! R:/127.0.0.1:8091]
+22:33:18:925  INFO 17344 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0x821a2545, L:/127.0.0.1:65513 ! R:/127.0.0.1:8091]
+22:33:18:925  INFO 17344 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0x821a2545, L:/127.0.0.1:65513 ! R:/127.0.0.1:8091]
+22:33:18:925  INFO 17344 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x821a2545, L:/127.0.0.1:65513 ! R:/127.0.0.1:8091]) will closed
+22:33:18:926  INFO 17344 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x821a2545, L:/127.0.0.1:65513 ! R:/127.0.0.1:8091]) will closed
+22:33:18:927  INFO 17344 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel inactive: [id: 0x5af106b8, L:/127.0.0.1:65521 ! R:/127.0.0.1:8091]
+22:33:18:927  INFO 17344 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.netty.NettyClientChannelManager  : return to pool, rm channel:[id: 0x5af106b8, L:/127.0.0.1:65521 ! R:/127.0.0.1:8091]
+22:33:18:927  INFO 17344 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0x5af106b8, L:/127.0.0.1:65521 ! R:/127.0.0.1:8091]
+22:33:18:927  INFO 17344 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0x5af106b8, L:/127.0.0.1:65521 ! R:/127.0.0.1:8091]
+22:33:18:927  INFO 17344 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x5af106b8, L:/127.0.0.1:65521 ! R:/127.0.0.1:8091]) will closed
+22:33:18:927  INFO 17344 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x5af106b8, L:/127.0.0.1:65521 ! R:/127.0.0.1:8091]) will closed

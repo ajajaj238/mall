@@ -609,3 +609,28 @@ ip=192.168.111.1
 22:02:19:956 DEBUG 29612 --- [http-nio-8082-exec-6] c.h.cart.mapper.CartMapper.selectList    : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
 22:02:19:956 DEBUG 29612 --- [http-nio-8082-exec-6] c.h.cart.mapper.CartMapper.selectList    : ==> Parameters: 1(Long)
 22:02:19:958 DEBUG 29612 --- [http-nio-8082-exec-6] c.h.cart.mapper.CartMapper.selectList    : <==      Total: 0
+22:33:18:041  WARN 29612 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+22:33:18:041  WARN 29612 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+22:33:18:041  WARN 29612 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+22:33:18:042  WARN 29612 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+22:33:18:090  INFO 29612 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+22:33:18:092  INFO 29612 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+22:33:18:398  INFO 29612 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+22:33:18:399  INFO 29612 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@3c1569ca[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+22:33:18:399  INFO 29612 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1779543273533_127.0.0.1_65481
+22:33:18:399  INFO 29612 --- [nacos-grpc-client-executor-715] c.a.n.c.remote.client.grpc.GrpcClient    : [1779543273533_127.0.0.1_65481]Ignore complete event,isRunning:false,isAbandon=false
+22:33:18:401  INFO 29612 --- [SpringContextShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@3f076856[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 716]
+22:33:18:404  INFO 29612 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+22:33:18:413  INFO 29612 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+22:33:18:418  INFO 29612 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel inactive: [id: 0x5afd086b, L:/127.0.0.1:65445 ! R:/127.0.0.1:8091]
+22:33:18:418  INFO 29612 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.netty.NettyClientChannelManager  : return to pool, rm channel:[id: 0x5afd086b, L:/127.0.0.1:65445 ! R:/127.0.0.1:8091]
+22:33:18:418  INFO 29612 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0x5afd086b, L:/127.0.0.1:65445 ! R:/127.0.0.1:8091]
+22:33:18:418  INFO 29612 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0x5afd086b, L:/127.0.0.1:65445 ! R:/127.0.0.1:8091]
+22:33:18:418  INFO 29612 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x5afd086b, L:/127.0.0.1:65445 ! R:/127.0.0.1:8091]) will closed
+22:33:18:418  INFO 29612 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x5afd086b, L:/127.0.0.1:65445 ! R:/127.0.0.1:8091]) will closed
+22:33:18:419  INFO 29612 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel inactive: [id: 0xf17ff97f, L:/127.0.0.1:65449 ! R:/127.0.0.1:8091]
+22:33:18:419  INFO 29612 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.netty.NettyClientChannelManager  : return to pool, rm channel:[id: 0xf17ff97f, L:/127.0.0.1:65449 ! R:/127.0.0.1:8091]
+22:33:18:419  INFO 29612 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0xf17ff97f, L:/127.0.0.1:65449 ! R:/127.0.0.1:8091]
+22:33:18:419  INFO 29612 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0xf17ff97f, L:/127.0.0.1:65449 ! R:/127.0.0.1:8091]
+22:33:18:419  INFO 29612 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xf17ff97f, L:/127.0.0.1:65449 ! R:/127.0.0.1:8091]) will closed
+22:33:18:419  INFO 29612 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xf17ff97f, L:/127.0.0.1:65449 ! R:/127.0.0.1:8091]) will closed

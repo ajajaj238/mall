@@ -1,0 +1,33 @@
+# ===== IDE & Editor =====
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# ===== AI / Tools =====
+.claude/
+
+# ===== Maven =====
+target/
+*.class
+*.jar
+*.war
+
+# ===== Logs =====
+logs/
+*.log
+
+# ===== Temp =====
+tmp/
+temp/
+*.tmp
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Nginx =====
+hmshop/hmall-nginx/logs/
+hmshop/hmall-nginx/temp/

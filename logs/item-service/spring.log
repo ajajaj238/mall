@@ -2144,3 +2144,28 @@ ip=192.168.111.1
 21:37:48:318  INFO 30000 --- [rpcDispatch_RMROLE_1_2_64] i.s.c.r.p.c.RmBranchCommitProcessor      : rm client handle branch commit process:BranchCommitRequest{xid='192.168.111.1:8091:8089247607033266212', branchId=8089247607033266216, branchType=AT, resourceId='jdbc:mysql://127.0.0.1:3309/hm-item', applicationData='{"autoCommit":false}'}
 21:37:48:318  INFO 30000 --- [rpcDispatch_RMROLE_1_2_64] io.seata.rm.AbstractRMHandler            : Branch committing: 192.168.111.1:8091:8089247607033266212 8089247607033266216 jdbc:mysql://127.0.0.1:3309/hm-item {"autoCommit":false}
 21:37:48:318  INFO 30000 --- [rpcDispatch_RMROLE_1_2_64] io.seata.rm.AbstractRMHandler            : Branch commit result: PhaseTwo_Committed
+22:33:18:033  WARN 30000 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+22:33:18:033  WARN 30000 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+22:33:18:034  WARN 30000 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+22:33:18:035  WARN 30000 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+22:33:18:097  INFO 30000 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+22:33:18:099  INFO 30000 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+22:33:18:403  INFO 30000 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+22:33:18:403  INFO 30000 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@3bcdb8b8[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+22:33:18:403  INFO 30000 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1779543275305_127.0.0.1_65488
+22:33:18:404  INFO 30000 --- [nacos-grpc-client-executor-714] c.a.n.c.remote.client.grpc.GrpcClient    : [1779543275305_127.0.0.1_65488]Ignore complete event,isRunning:false,isAbandon=false
+22:33:18:406  INFO 30000 --- [SpringContextShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@73cd9d86[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 715]
+22:33:18:533  INFO 30000 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+22:33:18:539  INFO 30000 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+22:33:18:540  INFO 30000 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel inactive: [id: 0xe740cbe1, L:/127.0.0.1:65459 ! R:/127.0.0.1:8091]
+22:33:18:540  INFO 30000 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.netty.NettyClientChannelManager  : return to pool, rm channel:[id: 0xe740cbe1, L:/127.0.0.1:65459 ! R:/127.0.0.1:8091]
+22:33:18:540  INFO 30000 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0xe740cbe1, L:/127.0.0.1:65459 ! R:/127.0.0.1:8091]
+22:33:18:540  INFO 30000 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0xe740cbe1, L:/127.0.0.1:65459 ! R:/127.0.0.1:8091]
+22:33:18:540  INFO 30000 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xe740cbe1, L:/127.0.0.1:65459 ! R:/127.0.0.1:8091]) will closed
+22:33:18:540  INFO 30000 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xe740cbe1, L:/127.0.0.1:65459 ! R:/127.0.0.1:8091]) will closed
+22:33:18:542  INFO 30000 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel inactive: [id: 0x15dd2283, L:/127.0.0.1:65461 ! R:/127.0.0.1:8091]
+22:33:18:543  INFO 30000 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.netty.NettyClientChannelManager  : return to pool, rm channel:[id: 0x15dd2283, L:/127.0.0.1:65461 ! R:/127.0.0.1:8091]
+22:33:18:543  INFO 30000 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0x15dd2283, L:/127.0.0.1:65461 ! R:/127.0.0.1:8091]
+22:33:18:543  INFO 30000 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0x15dd2283, L:/127.0.0.1:65461 ! R:/127.0.0.1:8091]
+22:33:18:543  INFO 30000 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x15dd2283, L:/127.0.0.1:65461 ! R:/127.0.0.1:8091]) will closed
+22:33:18:543  INFO 30000 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x15dd2283, L:/127.0.0.1:65461 ! R:/127.0.0.1:8091]) will closed
