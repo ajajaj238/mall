@@ -10,13 +10,26 @@ hm:
     package: com.hmall.trade.controller
 spring:
   rabbitmq:
-    host: 192.168.40.130
+    host: 127.0.0.1
     port: 5672
     username: admin
-    password: admin
+    password: zhj123456
     virtual-host: /
+  redis:
+    host: 127.0.0.1
+    port: 6379
 
 seata:
-  data-source-proxy-mode: XA
-  enabled: false
-
+  enabled: true
+  application-id: trade-service
+  tx-service-group: hmall-tx-group
+  data-source-proxy-mode: AT
+  service:
+    vgroup-mapping:
+      hmall-tx-group: default
+    grouplist:
+      default: 127.0.0.1:8091
+  registry:
+    type: file
+  config:
+    type: file

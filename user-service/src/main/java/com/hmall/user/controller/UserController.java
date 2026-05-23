@@ -1,5 +1,6 @@
 package com.hmall.user.controller;
 
+import com.hmall.common.utils.UserContext;
 import com.hmall.user.domin.dto.LoginFormDTO;
 import com.hmall.user.domin.vo.UserLoginVO;
 import com.hmall.user.service.IUserService;
@@ -23,6 +24,12 @@ public class UserController {
     @PostMapping("login")
     public UserLoginVO login(@RequestBody @Validated LoginFormDTO loginFormDTO){
         return userService.login(loginFormDTO);
+    }
+
+    @ApiOperation("获取当前用户信息")
+    @GetMapping("me")
+    public UserLoginVO me(){
+        return userService.getUserInfo(UserContext.getUser());
     }
 
     @ApiOperation("扣减余额")

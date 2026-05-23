@@ -12,10 +12,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -57,5 +54,73 @@ public class AddressController {
         }
         // 3.转vo
         return BeanUtils.copyList(list, AddressDTO.class);
+    }
+
+    @ApiOperation("新增地址")
+    @PostMapping
+    public void addAddress(@RequestBody AddressDTO addressDTO) {
+        // 1.获取当前用户
+        Long userId = UserContext.getUser();
+        // 2.转换为PO
+        Address address = BeanUtils.copyBean(addressDTO, Address.class);
+        address.setUserId(userId);
+        // 3.如果设置为默认地址,先取消其他默认地址
+        if (address.getIsDefault() != null && address.getIsDefault() == 1) {
+            addressService.update()
+                    .set("is_default", 0)
+                    .eq("user_id", userId)
+                    .eq("is_default", 1)
+                    .update();
+        }
+        // 4.保存地址
+        addressService.save(address);
+    }
+
+    @ApiOperation("更新地址")
+    @PutMapping("{addressId}")
+    public void updateAddress(
+            @ApiParam("地址id") @PathVariable("addressId") Long id,
+            @RequestBody AddressDTO addressDTO) {
+        // 1.根据id查询
+        Address address = addressService.getById(id);
+        if (address == null) {
+            throw new BadRequestException("地址不存在");
+        }
+        // 2.判断当前用户
+        Long userId = UserContext.getUser();
+        if (!address.getUserId().equals(userId)) {
+            throw new BadRequestException("地址不属于当前登录用户");
+        }
+        // 3.如果设置为默认地址,先取消其他默认地址
+        if (addressDTO.getIsDefault() != null && addressDTO.getIsDefault() == 1) {
+            addressService.update()
+                    .set("is_default", 0)
+                    .eq("user_id", userId)
+                    .eq("is_default", 1)
+                    .ne("id", id)
+                    .update();
+        }
+        // 4.更新地址
+        Address updateAddress = BeanUtils.copyBean(addressDTO, Address.class);
+        updateAddress.setId(id);
+        updateAddress.setUserId(userId);
+        addressService.updateById(updateAddress);
+    }
+
+    @ApiOperation("删除地址")
+    @DeleteMapping("{addressId}")
+    public void deleteAddress(@ApiParam("地址id") @PathVariable("addressId") Long id) {
+        // 1.根据id查询
+        Address address = addressService.getById(id);
+        if (address == null) {
+            throw new BadRequestException("地址不存在");
+        }
+        // 2.判断当前用户
+        Long userId = UserContext.getUser();
+        if (!address.getUserId().equals(userId)) {
+            throw new BadRequestException("地址不属于当前登录用户");
+        }
+        // 3.删除地址
+        addressService.removeById(id);
     }
 }

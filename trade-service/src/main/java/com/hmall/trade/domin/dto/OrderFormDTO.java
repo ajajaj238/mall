@@ -16,4 +16,6 @@ public class OrderFormDTO {
     private Integer paymentType;
     @ApiModelProperty("下单商品列表")
     private List<OrderDetailDTO> details;
+    @ApiModelProperty("幂等性Token")
+    private String idempotentToken;
 }

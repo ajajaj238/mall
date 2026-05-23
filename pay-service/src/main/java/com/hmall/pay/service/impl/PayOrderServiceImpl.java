@@ -35,6 +35,7 @@ import java.time.LocalDateTime;
 @Service
 @RequiredArgsConstructor
 public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> implements IPayOrderService {
+    private static final long PAY_ORDER_TTL_MINUTES = 30L;
 
     @Autowired
     private final RabbitTemplate rabbitTemplate;
@@ -56,6 +57,13 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
     public void tryPayOrderByBalance(PayOrderFormDTO payOrderFormDTO) {
         // 1.查询支付单
         PayOrder po = getById(payOrderFormDTO.getId());
+        if (po == null) {
+            throw new BizIllegalException("支付单不存在");
+        }
+        if (isPayOrderExpired(po)) {
+            closePayOrderByBizOrderNo(po.getBizOrderNo());
+            throw new BizIllegalException("订单已关闭");
+        }
         // 2.判断状态
         if (!PayStatus.WAIT_BUYER_PAY.equalsValue(po.getStatus())) {
             // 订单不是未支付，状态异常
@@ -75,6 +83,25 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
         } catch (Exception e) {
             log.error("消息发送失败！订单id：{}",po.getBizOrderNo(),e);
         }
+    }
+
+    @Override
+    public PayOrder queryPayOrderByBizOrderNo(Long bizOrderNo) {
+        PayOrder payOrder = getOne(new QueryWrapper<PayOrder>().eq("biz_order_no", bizOrderNo));
+        if (payOrder != null && isPayOrderExpired(payOrder)) {
+            closePayOrderByBizOrderNo(bizOrderNo);
+            payOrder.setStatus(PayStatus.TRADE_CLOSED.getValue());
+        }
+        return payOrder;
+    }
+
+    @Override
+    public void closePayOrderByBizOrderNo(Long bizOrderNo) {
+        lambdaUpdate()
+                .set(PayOrder::getStatus, PayStatus.TRADE_CLOSED.getValue())
+                .eq(PayOrder::getBizOrderNo, bizOrderNo)
+                .in(PayOrder::getStatus, PayStatus.NOT_COMMIT.getValue(), PayStatus.WAIT_BUYER_PAY.getValue())
+                .update();
     }
 
     public boolean markPayOrderSuccess(Long id, LocalDateTime successTime) {
@@ -99,6 +126,10 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
             payOrder.setPayOrderNo(IdWorker.getId());
             save(payOrder);
             return payOrder;
+        }
+        if (isPayOrderExpired(oldOrder)) {
+            closePayOrderByBizOrderNo(oldOrder.getBizOrderNo());
+            throw new BizIllegalException("订单已关闭");
         }
         // 3.旧单已经存在，判断是否支付成功
         if (PayStatus.TRADE_SUCCESS.equalsValue(oldOrder.getStatus())) {
@@ -128,7 +159,7 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
         // 1.数据转换
         PayOrder payOrder = BeanUtils.toBean(payApplyDTO, PayOrder.class);
         // 2.初始化数据
-        payOrder.setPayOverTime(LocalDateTime.now().plusMinutes(120L));
+        payOrder.setPayOverTime(LocalDateTime.now().plusMinutes(PAY_ORDER_TTL_MINUTES));
         payOrder.setStatus(PayStatus.WAIT_BUYER_PAY.getValue());
         payOrder.setBizUserId(UserContext.getUser());
         return payOrder;
@@ -138,5 +169,13 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
         QueryWrapper<PayOrder> wrapper = new QueryWrapper<>();
         wrapper.eq("biz_order_no", bizOrderNo);
         return getOne(wrapper);
+    }
+
+    private boolean isPayOrderExpired(PayOrder payOrder) {
+        return payOrder != null
+                && payOrder.getPayOverTime() != null
+                && !PayStatus.TRADE_SUCCESS.equalsValue(payOrder.getStatus())
+                && !PayStatus.TRADE_CLOSED.equalsValue(payOrder.getStatus())
+                && LocalDateTime.now().isAfter(payOrder.getPayOverTime());
     }
 }

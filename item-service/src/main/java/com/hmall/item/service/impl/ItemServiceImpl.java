@@ -13,6 +13,7 @@ import com.hmall.item.domin.po.Item;
 import com.hmall.item.domin.query.ItemPageQuery;
 import com.hmall.item.mapper.ItemMapper;
 import com.hmall.item.service.IItemService;
+import com.hmall.item.service.IItemStockService;
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
@@ -45,6 +46,9 @@ public class ItemServiceImpl extends ServiceImpl<ItemMapper, Item> implements II
 
     @Autowired
     private RestHighLevelClient client;
+    
+    @Autowired
+    private IItemStockService itemStockService;
 
     @Value("${hm.elasticsearch.host}")
     private String elasticsearchHost;
@@ -52,16 +56,8 @@ public class ItemServiceImpl extends ServiceImpl<ItemMapper, Item> implements II
     @Override
     @Transactional
     public void deductStock(List<OrderDetailDTO> items) {
-        String sqlStatement = "com.hmall.item.mapper.ItemMapper.updateStock";
-        boolean r = false;
-        try {
-            r = executeBatch(items, (sqlSession, entity) -> sqlSession.update(sqlStatement, entity));
-        } catch (Exception e) {
-            throw new BizIllegalException("更新库存异常，可能是库存不足!", e);
-        }
-        if (!r) {
-            throw new BizIllegalException("库存不足！");
-        }
+        // 使用新的库存服务（支持Redis预扣减）
+        itemStockService.deductStock(items);
     }
 
     @Override

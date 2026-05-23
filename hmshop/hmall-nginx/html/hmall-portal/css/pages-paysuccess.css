@@ -1,0 +1,109 @@
+/* 基础样式 */
+.top {
+    background-color: #f1f1f1
+}
+
+/* 现代化页面样式 */
+body.trend-pay-success-page {
+    background: #f5f7fb;
+    color: #334155;
+}
+
+.trend-pay-success-page .cart.py-container {
+    padding: 20px 0 42px;
+}
+
+.trend-pay-success-page .logoArea {
+    margin: 18px 0 20px;
+    padding: 24px 28px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #fff7f3, #ffffff 58%);
+    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trend-pay-success-page .logo img { 
+    display: none; 
+}
+
+.trend-pay-success-page .logo {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.trend-pay-success-page .logo-mark {
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 700;
+    color: #ff5a24;
+}
+
+.trend-pay-success-page .logo-sub {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ff7a45;
+}
+
+.trend-pay-success-page .logoArea > span {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* 支付成功区域 */
+.trend-pay-success-page .paysuccess {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: "微软雅黑"
+}
+
+.trend-pay-success-page .paysuccess .success {
+    width: 100%;
+    margin: 0;
+    background: #fff;
+    border-radius: 26px;
+    padding: 40px 28px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.trend-pay-success-page .success h3 {
+    margin: 20px 0;
+    font-weight: 700;
+    font-size: 24px;
+    color: #0f172a;
+}
+
+.trend-pay-success-page .success .paydetail {
+    margin-left: 66px;
+    font-size: 16px;
+    color: #475569;
+}
+
+.trend-pay-success-page .paydetail p {
+    line-height: 32px;
+}
+
+.trend-pay-success-page p.button {
+    margin: 30px 0 0 0;
+}
+
+.trend-pay-success-page .paydetail .sui-btn.btn-xlarge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    padding: 0 34px;
+    border-radius: 16px;
+    font-size: 18px;
+    border: 0;
+}
+
+.trend-pay-success-page .paydetail .btn-danger {
+    background: linear-gradient(135deg, #ff875f, #ff5a24);
+    box-shadow: 0 16px 30px rgba(255, 90, 36, 0.24);
+}

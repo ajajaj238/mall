@@ -1,0 +1,145 @@
+.checkout h5{font-weight:700;margin:0}.hr{height:1px;background-color:#ddd}.top{background-color:#f1f1f1}.search{position:absolute;right:0;top:22px;font-size:16px}.search .btn-danger{font-size:16px}.checkout{margin:20px 0}.checkout-steps{border:1px solid #ddd;padding:0 25px 0 25px;font-family:"微软雅黑"}.step-tit{line-height:36px;margin:15px 0}.step-cont{margin:0 10px 10px 20px}.step-cont ul li{list-style-type:none;overflow:hidden}.step-cont .con{float:left;padding:0;margin:5px 0}.seven{color:#c81623;margin-top:20px}.price{font:14px "微软雅黑";font-weight:700;color:#e12228}ul.addr-detail li{width:99%;margin:10px 0}.recommendAddr{margin-top:10PX}ul.payType li{position:relative;display:inline-block;padding:5px 20px;border:1px solid #ddd;*display:inline;_zoom:1;*margin:5px 10px;cursor:pointer}.step-cont li.selected{border:1px solid #c81623}.step-cont li.selected span{width:13px;height:13px;display:none;position:absolute;right:0;_right:-1px;bottom:0;_bottom:-1px;overflow:hidden;background:url(../img/choosed.png) no-repeat}.step-cont li.selected span{display:block}.addr-item .name{text-align:center;border:1px solid #ddd}.addressInfo .sui-modal{width:565px}.addr-item .name a{display:block;padding:5px 38px;position:relative;outline:0;text-decoration:none;color:inherit}.addr-item .name.selected{border:1px solid #c81623}.addr-item .name a span{width:13px;height:13px;display:none;position:absolute;right:0;_right:-1px;bottom:0;_bottom:-1px;overflow:hidden;background:url(../img/choosed.png) no-repeat}.addr-item .name.selected span{display:block}.addr-item .address{line-height:30px;margin-left:10px;padding-left:5px;width:55%}.addr-item .address:hover{cursor:pointer}.addr-item .address .edittext{padding-left:15px;visibility:hidden}.address-hover{background-color:#ddd}.address-hover .edittext{visibility:visible!important}.addr-item .address .base{padding:4px;margin-left:10px;background-color:#878787;color:#fff}.payshipInfo span{font-weight:700}ul.send-detail li{margin-top:10px;line-height:30px}.sendType .express{border:1px solid #ddd;width:120px;text-align:center;margin-right:10px}.sendType{padding:15px}.sendType{background:#f4f4f4;margin-bottom:2px} .num,.exit{text-align:center}.order-summary{overflow:hidden;padding-right:20px}.list,.trade{line-height:26px}.list span{float:left;width:160px}.list em{font-family:"微软雅黑"}.trade{padding:10px;margin:10px 0;text-align:right;background-color:#f4f4f4;border:1px solid #ddd}.trade .fc-receiverInfo{color:#999}.sui-btn{}.submit .btn-xlarge{padding:15px 45px;float:right;margin:0 0 10px;font:18px "微软雅黑";font-weight:700;border-radius:0}.number{color:red}.step-tit h5 span{float:right}.step-tit h5 span a{color:#555;cursor:pointer;text-decoration:none}.step-tit h5 span a:hover{color:red}
+
+/* 弹窗样式 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 24px 56px rgba(15, 23, 42, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  border-bottom: 2px solid #eef2f7;
+}
+
+.modal-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.close-btn {
+  font-size: 32px;
+  color: #94a3b8;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #ff5a24;
+}
+
+.modal-body {
+  padding: 24px 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #334155;
+  font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #334155;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff5a24;
+  box-shadow: 0 0 0 3px rgba(255, 90, 36, 0.1);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 28px;
+  border-top: 2px solid #eef2f7;
+}
+
+.modal-footer button {
+  height: 44px;
+  padding: 0 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 0;
+}
+
+.btn-cancel {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.btn-cancel:hover {
+  background: #e2e8f0;
+}
+
+.btn-confirm {
+  background: linear-gradient(135deg, #ff875f, #ff5a24);
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(255, 90, 36, 0.24);
+}
+
+.btn-confirm:hover {
+  box-shadow: 0 12px 20px rgba(255, 90, 36, 0.32);
+  transform: translateY(-1px);
+}

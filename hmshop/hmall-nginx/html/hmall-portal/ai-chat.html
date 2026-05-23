@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI智能助手 - 星链商城</title>
+    <link rel="stylesheet" type="text/css" href="./css/webbase.css" />
+    <link rel="stylesheet" type="text/css" href="./css/pages-index.css" />
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .ai-chat-container {
+            width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 40px);
+        }
+
+        .ai-chat-header {
+            background: linear-gradient(90deg, #409EFF, #66b1ff);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .ai-chat-header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .ai-chat-header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .ai-chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+
+        .ai-message {
+            margin-bottom: 20px;
+            display: flex;
+        }
+
+        .ai-message.user {
+            justify-content: flex-end;
+        }
+
+        .ai-message-content {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .ai-message.ai .ai-message-content {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-top-left-radius: 5px;
+        }
+
+        .ai-message.user .ai-message-content {
+            background-color: #409EFF;
+            color: white;
+            border-top-right-radius: 5px;
+        }
+
+        .ai-chat-input {
+            display: flex;
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+            background-color: white;
+        }
+
+        .ai-chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .ai-chat-input button {
+            margin-left: 15px;
+            padding: 10px 25px;
+            background-color: #409EFF;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .ai-chat-input button:hover {
+            background-color: #66b1ff;
+        }
+
+        .ai-chat-input button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .ai-tips {
+            padding: 15px 20px;
+            background-color: #e8f4ff;
+            border-top: 1px solid #d0e6ff;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .ai-tips ul {
+            margin: 5px 0 0;
+            padding-left: 20px;
+        }
+
+        .ai-tips li {
+            margin-bottom: 3px;
+        }
+
+        .welcome-message {
+            text-align: center;
+            padding: 30px 20px;
+            color: #999;
+        }
+
+        .welcome-message h3 {
+            color: #409EFF;
+            margin-bottom: 20px;
+        }
+
+        .welcome-message p {
+            margin: 5px 0;
+        }
+
+        .typing-indicator {
+            display: inline-block;
+            padding: 12px 16px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-top-left-radius: 5px;
+            border-radius: 18px;
+        }
+
+        .typing-indicator span {
+            height: 10px;
+            width: 10px;
+            float: left;
+            margin: 0 2px;
+            background-color: #9E9EA1;
+            display: block;
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .typing-indicator span:nth-of-type(1) {
+            animation: typing 1s infinite;
+        }
+
+        .typing-indicator span:nth-of-type(2) {
+            animation: typing 1s infinite 0.2s;
+        }
+
+        .typing-indicator span:nth-of-type(3) {
+            animation: typing 1s infinite 0.4s;
+        }
+
+        @keyframes typing {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="aiChatApp">
+        <!-- 头部栏位 -->
+        <top></top>
+
+        <div class="ai-chat-container">
+            <div class="ai-chat-header">
+                <img src="./img/logo.png" alt="AI助手">
+                <h1>AI智能客服助手</h1>
+            </div>
+
+            <div class="ai-chat-messages" ref="chatMessages">
+                <div class="welcome-message" v-if="messages.length === 0">
+                    <h3>您好！我是AI智能客服助手</h3>
+                    <p>正在加载聊天历史记录...</p>
+                </div>
+
+                <div v-for="(message, index) in messages" :key="index" :class="['ai-message', message.role]">
+                    <div class="ai-message-content">{{ message.content }}</div>
+                </div>
+
+                <div v-if="isTyping" class="ai-message ai">
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-tips">
+                <p>热门问题：</p>
+                <ul>
+                    <li>如何查询订单状态？</li>
+                    <li>如何申请退换货？</li>
+                    <li>支持哪些支付方式？</li>
+                    <li>配送时间和费用？</li>
+                </ul>
+            </div>
+
+            <div class="ai-chat-input">
+                <input type="text" v-model="userInput" @keyup.enter="sendMessage" placeholder="请输入您的问题..."
+                    :disabled="isProcessing">
+                <button @click="sendMessage" :disabled="isProcessing">发送</button>
+            </div>
+        </div>
+
+        <foot></foot>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/top.js"></script>
+    <script src="./js/copyright.js"></script>
+    <script src="./js/foot.js"></script>
+
+    <script>
+        let aiChatApp = new Vue({
+            el: "#aiChatApp",
+            data() {
+                return {
+                    userInput: '',
+                    messages: [],
+                    isProcessing: false,
+                    isTyping: false,
+                    chatId: ''
+                };
+            },
+            created() {
+                this.chatId = this.generateChatId();
+                console.log("生成的 chatId:", this.chatId);
+            },
+            mounted() {
+                util.store.set("return-url", location.href);
+                this.loadChatHistory();
+            },
+            methods: {
+                generateChatId() {
+                    return Date.now() + '' + Math.floor(Math.random() * 1000000);
+                },
+
+                async loadChatHistory() {
+                    console.log("正在加载聊天历史...");
+                    try {
+                        const response = await axios.get(
+                            `http://localhost:18080/api/ai/history?chatId=${this.chatId}`);
+                        console.log("收到历史记录响应:", response);
+
+                        if (Array.isArray(response.data) && response.data.length > 0) {
+                            const historyMessages = response.data.map((content, index) => {
+                                const role = index % 2 === 0 ? 'ai' : 'user';
+                                return {
+                                    role,
+                                    content
+                                };
+                            });
+                            this.messages = historyMessages;
+                        } else {
+                            this.messages = [{
+                                role: 'ai',
+                                content: '您好！我是AI智能客服助手，有什么我可以帮您的吗？'
+                            }];
+                        }
+                    } catch (error) {
+                        console.error('获取聊天历史记录失败:', error);
+                        this.messages = [{
+                            role: 'ai',
+                            content: '您好！我是AI智能客服助手，有什么我可以帮您的吗？'
+                        }];
+                    } finally {
+                        this.$nextTick(() => {
+                            this.scrollToBottom();
+                        });
+                    }
+                },
+
+                async sendMessage() {
+                    if (!this.userInput.trim() || this.isProcessing) return;
+
+                    const userMessage = this.userInput;
+                    this.messages.push({
+                        role: 'user',
+                        content: userMessage
+                    });
+
+                    this.userInput = '';
+                    this.isProcessing = true;
+                    this.isTyping = true;
+
+                    this.$nextTick(() => {
+                        this.scrollToBottom();
+                    });
+
+                    try {
+                        console.log("发送聊天请求:", userMessage);
+                        const response = await fetch(
+                            `http://localhost:18080/api/ai/chat?prompt=${encodeURIComponent(userMessage)}&chatId=${this.chatId}`
+                            );
+
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+
+                        const reader = response.body.getReader();
+                        const decoder = new TextDecoder('utf-8');
+
+                        const aiMessageIndex = this.messages.length;
+                        this.messages.push({
+                            role: 'ai',
+                            content: ''
+                        });
+
+                        let aiContent = '';
+
+                        while (true) {
+                            const {
+                                done,
+                                value
+                            } = await reader.read();
+
+                            if (done) {
+                                break;
+                            }
+
+                            const chunk = decoder.decode(value, {
+                                stream: true
+                            });
+                            aiContent += chunk;
+
+                            this.messages[aiMessageIndex].content = aiContent;
+
+                            this.$nextTick(() => {
+                                this.scrollToBottom();
+                            });
+                        }
+                    } catch (error) {
+                        console.error('与AI助手通信失败:', error);
+                        this.messages.push({
+                            role: 'ai',
+                            content: '抱歉，我在处理您的问题时遇到了一些困难。请稍后再试。'
+                        });
+                    } finally {
+                        this.isProcessing = false;
+                        this.isTyping = false;
+                        this.$nextTick(() => {
+                            this.scrollToBottom();
+                        });
+                    }
+                },
+
+                scrollToBottom() {
+                    const container = this.$refs.chatMessages;
+                    if (container) {
+                        container.scrollTop = container.scrollHeight;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

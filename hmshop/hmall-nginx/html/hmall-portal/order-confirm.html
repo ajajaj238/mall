@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+  <title>结算页</title>
+  <link rel="stylesheet" type="text/css" href="./css/webbase.css" />
+  <link rel="stylesheet" type="text/css" href="./css/pages-getOrderInfo.css" />
+  <link rel="stylesheet" type="text/css" href="./css/orderInfo.css" />
+  <style>
+    body.trend-order-page {
+      background: #f5f7fb;
+      color: #334155;
+    }
+    .trend-order-page .cart.py-container {
+      padding: 20px 0 42px;
+    }
+    .trend-order-page .logoArea {
+      margin: 18px 0 20px;
+      padding: 24px 28px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #fff7f3, #ffffff 58%);
+      box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .trend-order-page .logo img { display: none; }
+    .trend-order-page .logo {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .trend-order-page .logo-mark {
+      font-size: 40px;
+      line-height: 1;
+      font-weight: 700;
+      color: #ff5a24;
+    }
+    .trend-order-page .logo-sub {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ff7a45;
+    }
+    .trend-order-page .logoArea > span {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .trend-order-page .checkout.py-container {
+      background: #fff;
+      border-radius: 26px;
+      padding: 26px 28px 30px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+      width: auto;
+    }
+    .trend-order-page .checkout-tit {
+      margin-bottom: 16px;
+    }
+    .trend-order-page .tit-txt {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .trend-order-page .checkout-steps {
+      border: 0;
+      padding: 0;
+    }
+    .trend-order-page .step-tit {
+      margin: 18px 0 12px;
+    }
+    .trend-order-page .step-tit h5 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 18px;
+      color: #0f172a;
+    }
+    .trend-order-page .step-tit h5 span {
+      float: none;
+    }
+    .trend-order-page .step-tit h5 span a {
+      display: inline-flex;
+      align-items: center;
+      height: 34px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: #fff7f3;
+      color: #ff5a24;
+      font-weight: 700;
+    }
+    .trend-order-page .step-cont {
+      margin: 0 0 16px;
+    }
+    .trend-order-page .hr {
+      margin-top: 16px;
+      background: #eef2f7;
+    }
+    
+    /* 地址卡片样式优化 */
+    .trend-order-page .addr-item {
+      list-style: none;
+    }
+    
+    .trend-order-page .addr-card-wrapper {
+      border: 2px solid #eef2f7;
+      border-radius: 20px;
+      background: #fff;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.04);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .trend-order-page .addr-card-wrapper:hover {
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+      transform: translateY(-2px);
+    }
+    
+    .trend-order-page .addr-card-wrapper.selected {
+      border-color: #ff5a24;
+      background: linear-gradient(135deg, #fffaf7, #ffffff 55%);
+      box-shadow: 0 16px 32px rgba(255, 90, 36, 0.12);
+    }
+    
+    .trend-order-page .addr-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .trend-order-page .addr-tag-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+    
+    .trend-order-page .addr-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    
+    .trend-order-page .tag-default {
+      background: #fff1eb;
+      color: #ff5a24;
+    }
+    
+    .trend-order-page .tag-label {
+      background: #f8fafc;
+      color: #64748b;
+    }
+    
+    .trend-order-page .addr-contact {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+      flex-shrink: 0;
+    }
+    
+    .trend-order-page .addr-mobile {
+      font-size: 14px;
+      color: #64748b;
+      flex-shrink: 0;
+    }
+    
+    .trend-order-page .addr-actions {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    
+    .trend-order-page .addr-actions a {
+      color: #64748b;
+      font-size: 14px;
+      text-decoration: none;
+      transition: color 0.3s;
+      padding: 4px 8px;
+    }
+    
+    .trend-order-page .addr-actions a:hover {
+      color: #ff5a24;
+    }
+    
+    .trend-order-page .addr-card-body {
+      padding-left: 0;
+    }
+    
+    .trend-order-page .addr-detail-text {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+    }
+    
+    /* 移除旧的地址样式 */
+    .trend-order-page .sendGoods {
+      border: 1px solid #eef2f7;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #fffaf7, #ffffff 55%);
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.04);
+    }
+    .trend-order-page .sendGoods {
+      background: linear-gradient(135deg, #fffaf7, #ffffff 55%);
+    }
+    .trend-order-page .sendGoods img {
+      border-radius: 16px;
+    }
+    .trend-order-page .desc {
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .trend-order-page .seven {
+      color: #64748b;
+      margin-top: 12px;
+    }
+    .trend-order-page .price {
+      color: #ff5a24;
+      font-size: 18px;
+    }
+    .trend-order-page .num-btn {
+      width: 28px;
+      height: 28px;
+      border: 0;
+      border-radius: 10px;
+      background: #fff1eb;
+      color: #ff5a24;
+      font-weight: 700;
+    }
+    .trend-order-page .num input {
+      border: 1px solid #ffd6c8;
+      border-radius: 10px;
+      text-align: center;
+      height: 28px;
+      background: #fff;
+    }
+    .trend-order-page .exit {
+      color: #16a34a;
+      font-weight: 700;
+    }
+    .trend-order-page .order-summary,
+    .trend-order-page .trade {
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.06);
+      padding: 18px 22px;
+      margin-top: 18px;
+      border: 0;
+    }
+    .trend-order-page .list {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+    .trend-order-page .list span {
+      float: none;
+      width: auto;
+    }
+    .trend-order-page .number,
+    .trend-order-page .allprice,
+    .trend-order-page .trade .price {
+      color: #ff5a24;
+      font-weight: 700;
+    }
+    .trend-order-page .submit {
+      margin-top: 18px;
+      text-align: right;
+    }
+    .trend-order-page .submit .btn-xlarge {
+      float: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 54px;
+      padding: 0 34px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #ff875f, #ff5a24);
+      border: 0;
+      box-shadow: 0 16px 30px rgba(255, 90, 36, 0.24);
+    }
+  </style>
+</head>
+
+<body class="trend-order-page">
+<div id="orderApp" >
+  <!--head-->
+  <top></top>
+  <div class="cart py-container">
+    <div class="logoArea">
+      <a href="/">
+        <div class="logo">
+          <img src="./img/logo.png" alt="1"/>
+          <span class="logo-mark">星链</span>
+          <span class="logo-sub">Starlink Mall</span>
+        </div>
+      </a>
+      <span>订单确认 </span>
+    </div>
+    <!--主内容-->
+    <div class="checkout py-container">
+      <div class="checkout-tit">
+        <h4 class="tit-txt">填写并核对订单信息</h4>
+      </div>
+      <div class="checkout-steps">
+        <!--收件人信息-->
+        <div class="step-tit">
+          <h5>收件人信息<span>
+            <a class="newadd" @click="showAddressModal = true">新增收货地址</a>
+            <a class="newadd" @click="toggleAddressList" v-if="addressList.length > 3" style="margin-left: 10px">
+              {{showAllAddresses ? '收起' : '展开全部地址'}}
+            </a>
+          </span></h5>
+        </div>
+        <div class="step-cont">
+          <div class="addressInfo">
+            <ul class="addr-detail">
+              <li class="addr-item" v-for="(addr, index) in displayedAddresses" :key="addr.id">
+                <div class="addr-card-wrapper" @click="params.addressId = addr.id" :class="{selected: addr.id === params.addressId}">
+                  <div class="addr-card-header">
+                    <div class="addr-tag-group">
+                      <span v-if="addr.isDefault" class="addr-tag tag-default">默认</span>
+                      <span v-else class="addr-tag tag-label">{{getAddressLabel(index)}}</span>
+                      <span class="addr-contact">{{addr.contact}}</span>
+                      <span class="addr-mobile">{{handleMobile(addr.mobile)}}</span>
+                    </div>
+                    <div class="addr-actions">
+                      <a href="javascript:;" @click.stop="editAddress(addr)">编辑</a>
+                      <a href="javascript:;" @click.stop="deleteAddressConfirm(addr.id)">删除</a>
+                    </div>
+                  </div>
+                  <div class="addr-card-body">
+                    <div class="addr-detail-text">
+                      {{addr.province}} {{addr.city}} {{addr.town}} {{addr.street}}
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="hr"></div>
+        </div>
+
+        <!--支付和送货-->
+        <div class="payshipInfo">
+
+          <div class="step-tit">
+            <h5>送货清单</h5>
+          </div>
+          <div class="step-cont">
+            <ul class="send-detail">
+              <li v-for="item in items" :key="item.id" class="sendGoods">
+                <div >
+                  <ul class="yui3-g">
+                    <li class="yui3-u-1-8">
+                      <span><img :src="item.image" width="100" height="100" /></span>
+                    </li>
+                    <li class="yui3-u-7-12">
+                      <div class="desc">{{item.name}}</div>
+                      <div class="seven">
+                        <div v-for="(v,k) in parseJson(item.spec)">
+                          <span style="color: #504f4f">{{k}}</span> : {{v}}
+                        </div>
+                      </div>
+                    </li>
+                    <li class="yui3-u-1-12">
+                      <div>&nbsp;</div>
+                      <div class="price">￥{{util.formatPrice(item.newPrice || item.price)}}</div>
+                    </li>
+                    <li class="yui3-u-1-12">
+                      <div style="width: 60px; text-align: right">
+                        <button class="num-btn" @click="incNum(item)">+</button>
+                        <div class="num">
+                          <span>×</span>&nbsp;&nbsp;&nbsp;<input style="width: 22px" type="text" v-model="item.num">
+                        </div>
+                        <button class="num-btn" @click="decNum(item)">-</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order-summary">
+      <div class="static fr">
+        <div class="list">
+          <span><i class="number">{{items.length}}</i>件商品，总金额:</span>
+          <em class="allprice">¥{{totalPrice}}</em>
+        </div>
+        <div class="list">
+          <span>优惠券：</span>
+          <em class="money">0.00</em>
+        </div>
+        <div class="list">
+          <span>运费：</span>
+          <em class="transport">0.00</em>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix trade">
+      <div class="fc-price">应付金额:　<span class="price">¥{{totalPrice}}</span></div>
+      <div class="fc-receiverInfo">寄送至: {{address}}</div>
+    </div>
+    <div class="submit">
+      <a class="sui-btn btn-danger btn-xlarge" href="javascript:void(0)" @click="toPay">提交订单</a>
+    </div>
+  </div>
+
+  <!-- 编辑地址弹窗 -->
+  <div class="modal-overlay" v-if="showAddressModal" @click="closeModal">
+    <div class="modal-content" @click.stop>
+      <div class="modal-header">
+        <h3>{{editingAddress.id ? '编辑地址' : '新增地址'}}</h3>
+        <span class="close-btn" @click="closeModal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>收件人：</label>
+          <input type="text" v-model="editingAddress.contact" placeholder="请输入收件人姓名">
+        </div>
+        <div class="form-group">
+          <label>手机号：</label>
+          <input type="text" v-model="editingAddress.mobile" placeholder="请输入手机号">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>省：</label>
+            <input type="text" v-model="editingAddress.province" placeholder="省">
+          </div>
+          <div class="form-group">
+            <label>市：</label>
+            <input type="text" v-model="editingAddress.city" placeholder="市">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>区/县：</label>
+          <input type="text" v-model="editingAddress.town" placeholder="区/县">
+        </div>
+        <div class="form-group">
+          <label>详细地址：</label>
+          <textarea v-model="editingAddress.street" placeholder="请输入详细地址" rows="3"></textarea>
+        </div>
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" v-model="editingAddress.isDefault" :true-value="1" :false-value="0">
+            设为默认地址
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" @click="closeModal">取消</button>
+        <button class="btn-confirm" @click="saveAddress">保存</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+  <script src="./js/vue.js"></script>
+  <script src="./js/axios.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/top.js"></script>
+  <script>
+    let orderApp = new Vue({
+      el: "#orderApp",
+      data() {
+        return {
+          util,
+          paymentTypes: ["支付宝支付", "微信支付", "扣减余额"],
+          addressList: [],
+          items: [],
+          params: {
+            details: [],
+            paymentType: 3,
+            addressId: 61,
+          },
+          user: null,
+          showAllAddresses: false,
+          showAddressModal: false,
+          editingAddress: {
+            id: null,
+            contact: '',
+            mobile: '',
+            province: '',
+            city: '',
+            town: '',
+            street: '',
+            isDefault: 0
+          }
+        }
+      },
+      created() {
+        util.store.set("return-url", location.href);
+        this.user = util.store.get("user-info")
+        if(!this.user){
+          location.href = "login.html";
+        }
+        // 查询商品
+        this.getItem();
+        this.getAddress();
+      },
+      methods: {
+        getItem() {
+          this.items = util.store.get("selectedCarts");
+        },
+        getAddress() {
+          axios.get("/addresses")
+            .then(resp => {
+              if(resp && resp.length > 0){
+                this.addressList = resp;
+                if(resp[0]){
+                  this.params.addressId = resp[0].id;
+                }
+              }else{
+                alert("当前用户没有地址，现在展示假数据")
+                this.addressList = [
+                  { "id": 61, "userId": 2, "contact": "李佳星", "mobile": "13301212233", "province": "上海", "city": "上海", "town": "浦东新区", "street": "航头镇航头路", "isDefault": true },
+                  { "id": 63, "userId": 2, "contact": "李小龙", "mobile": "13301212233", "province": "广东", "city": "佛山", "town": "永春", "street": "永春武馆", "isDefault": false },
+                ]
+              }
+            })
+            .catch(err => {
+              this.addressList = [
+                { "id": 61, "userId": 2, "contact": "李佳星", "mobile": "13301212233", "province": "上海", "city": "上海", "town": "浦东新区", "street": "航头镇航头路", "isDefault": true },
+                { "id": 63, "userId": 2, "contact": "李小龙", "mobile": "13301212233", "province": "广东", "city": "佛山", "town": "永春", "street": "永春武馆", "isDefault": false },
+              ]
+              console.log("err")
+            })
+        },
+        toggleAddressList() {
+          this.showAllAddresses = !this.showAllAddresses;
+        },
+        getAddressLabel(index) {
+          const labels = ['家', '公司', '学校'];
+          return labels[index] || '其他';
+        },
+        editAddress(addr) {
+          this.editingAddress = {
+            id: addr.id,
+            contact: addr.contact,
+            mobile: addr.mobile,
+            province: addr.province,
+            city: addr.city,
+            town: addr.town,
+            street: addr.street,
+            isDefault: addr.isDefault
+          };
+          this.showAddressModal = true;
+        },
+        deleteAddressConfirm(id) {
+          if (confirm('确定要删除这个地址吗？')) {
+            this.deleteAddress(id);
+          }
+        },
+        deleteAddress(id) {
+          axios.delete("/addresses/" + id)
+            .then(() => {
+              alert('删除成功');
+              this.getAddress();
+            })
+            .catch(err => {
+              alert('删除失败：' + (err.message || '请重试'));
+              console.log(err);
+            });
+        },
+        saveAddress() {
+          if (!this.validateAddress()) {
+            return;
+          }
+          
+          const addressData = {
+            contact: this.editingAddress.contact,
+            mobile: this.editingAddress.mobile,
+            province: this.editingAddress.province,
+            city: this.editingAddress.city,
+            town: this.editingAddress.town,
+            street: this.editingAddress.street,
+            isDefault: this.editingAddress.isDefault
+          };
+
+          if (this.editingAddress.id) {
+            axios.put("/addresses/" + this.editingAddress.id, addressData)
+              .then(() => {
+                alert('更新成功');
+                this.closeModal();
+                this.getAddress();
+              })
+              .catch(err => {
+                alert('更新失败：' + (err.message || '请重试'));
+                console.log(err);
+              });
+          } else {
+            axios.post("/addresses", addressData)
+              .then(() => {
+                alert('新增成功');
+                this.closeModal();
+                this.getAddress();
+              })
+              .catch(err => {
+                alert('新增失败：' + (err.message || '请重试'));
+                console.log(err);
+              });
+          }
+        },
+        validateAddress() {
+          if (!this.editingAddress.contact) {
+            alert('请输入收件人姓名');
+            return false;
+          }
+          if (!this.editingAddress.mobile || !/^1[3-9]\d{9}$/.test(this.editingAddress.mobile)) {
+            alert('请输入正确的手机号');
+            return false;
+          }
+          if (!this.editingAddress.province || !this.editingAddress.city || !this.editingAddress.town) {
+            alert('请完整填写省市区信息');
+            return false;
+          }
+          if (!this.editingAddress.street) {
+            alert('请输入详细地址');
+            return false;
+          }
+          return true;
+        },
+        closeModal() {
+          this.showAddressModal = false;
+          this.editingAddress = {
+            id: null,
+            contact: '',
+            mobile: '',
+            province: '',
+            city: '',
+            town: '',
+            street: '',
+            isDefault: 0
+          };
+        },
+        toPay() {
+          let details = [];
+          this.items.forEach(({itemId, num}) => {
+            details.push({itemId, num})
+          })
+          this.params.details = details;
+          axios.post("/orders", this.params)
+            .then(resp => {
+              let orderId = resp;
+              location.href = "/pay.html?id=" + orderId
+            })
+            .catch(err => {
+              alert("下单失败，请重试！")
+              console.log(err)
+            });
+        },
+        handleMobile(mobile) {
+          return mobile.substring(0, 3) + "****" + mobile.substring(7)
+        },
+        incNum(item) {
+          if (item.num < item.stock) {
+            item.num++
+          }
+        },
+        decNum(item) {
+          if (item.num > 1) {
+            item.num--
+          }
+        },
+        parseJson(str) {
+          if (!str) {
+            return "";
+          }
+          return JSON.parse(str);
+        }
+      },
+      computed: {
+        address() {
+          const address = this.addressList.find(addr => addr.id === this.params.addressId);
+          if(!address){
+            return "";
+          }
+          return address.province + address.city
+            + address.town + address.street + " 收件人："
+            + address.contact + " " + this.handleMobile(address.mobile);
+        },
+        totalPrice() {
+          let total = 0;
+          this.items.forEach(i => {
+            total += ((i.newPrice || i.price) * i.num)
+          })
+          return util.formatPrice(total);
+        },
+        displayedAddresses() {
+          if (this.showAllAddresses || this.addressList.length <= 3) {
+            return this.addressList;
+          }
+          return this.addressList.slice(0, 3);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

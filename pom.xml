@@ -38,6 +38,7 @@
         <hutool.version>5.8.11</hutool.version>
         <mysql.version>8.0.23</mysql.version>
         <elasticsearch.version>7.12.1</elasticsearch.version>
+        <seata.version>1.7.0</seata.version>
     </properties>
 
     <!-- 对依赖包进行管理 -->
@@ -76,6 +77,12 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
+            </dependency>
+            <!--seata-->
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>${seata.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

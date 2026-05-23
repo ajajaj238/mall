@@ -1,9 +1,11 @@
 package com.hmall.trade.controller;
 
 import com.hmall.common.utils.BeanUtils;
+import com.hmall.common.utils.UserContext;
 import com.hmall.trade.domin.dto.OrderFormDTO;
 import com.hmall.trade.domin.vo.OrderVO;
 import com.hmall.trade.service.IOrderService;
+import com.hmall.trade.service.IdempotentService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class OrderController {
     private final IOrderService orderService;
+    private final IdempotentService idempotentService;
 
     @ApiOperation("根据id查询订单")
     @GetMapping("{id}")
@@ -35,5 +38,12 @@ public class OrderController {
     @PutMapping("/{orderId}")
     public void markOrderPaySuccess(@PathVariable("orderId") Long orderId) {
         orderService.markOrderPaySuccess(orderId);
+    }
+    
+    @ApiOperation("生成幂等性Token")
+    @GetMapping("/token")
+    public String generateIdempotentToken() {
+        Long userId = UserContext.getUser();
+        return idempotentService.generateToken(userId);
     }
 }

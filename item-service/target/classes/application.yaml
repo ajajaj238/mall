@@ -11,7 +11,24 @@ hm:
     package: com.hmall.item.controller
   
   elasticsearch:
-    host: http://192.168.40.130:9200
+    host: http://127.0.0.1:9200
+
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
 
 seata:
-  data-source-proxy-mode: XA
+  enabled: true
+  application-id: item-service
+  tx-service-group: hmall-tx-group
+  data-source-proxy-mode: AT
+  service:
+    vgroup-mapping:
+      hmall-tx-group: default
+    grouplist:
+      default: 127.0.0.1:8091
+  registry:
+    type: file
+  config:
+    type: file

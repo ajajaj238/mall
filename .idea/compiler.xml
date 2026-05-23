@@ -14,13 +14,13 @@
         <module name="hm-common" />
         <module name="item-service" />
         <module name="user-service" />
-        <module name="hm-service" />
         <module name="hm-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ai-service" target="11" />
       <module name="hm-ai" target="17" />
+      <module name="hm-service" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

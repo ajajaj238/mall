@@ -6,10 +6,16 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://${hm.db.host}:3306/hm-pay?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://${hm.db.host}:3309/hm-pay?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: ${hm.db.pw}
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: zhj123456
+    virtual-host: /
 mybatis-plus:
   configuration:
     default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
@@ -39,12 +45,3 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.hmall.pay.controller
-
-
-  rabbitmq:
-    host: 192.168.40.130
-    port: 5672
-    username: admin
-    password: admin
-    virtual-host: /
-

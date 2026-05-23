@@ -9,6 +9,7 @@ import com.hmall.common.domain.PageQuery;
 import com.hmall.common.utils.BeanUtils;
 import com.hmall.item.domin.po.Item;
 import com.hmall.item.service.IItemService;
+import com.hmall.item.service.IItemStockService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +24,7 @@ import java.util.List;
 public class ItemController {
 
     private final IItemService itemService;
+    private final IItemStockService itemStockService;
 
     @ApiOperation("分页查询商品")
     @GetMapping("/page")
@@ -80,5 +82,17 @@ public class ItemController {
     @PutMapping("/stock/deduct")
     public void deductStock(@RequestBody List<OrderDetailDTO> items){
         itemService.deductStock(items);
+    }
+    
+    @ApiOperation("预热热门商品库存到Redis")
+    @PostMapping("/stock/warmup/{id}")
+    public void warmUpStock(@PathVariable("id") Long itemId) {
+        itemStockService.warmUpStock(itemId);
+    }
+    
+    @ApiOperation("批量预热库存")
+    @PostMapping("/stock/warmup/batch")
+    public void batchWarmUpStock(@RequestBody List<Long> itemIds) {
+        itemStockService.batchWarmUpStock(itemIds);
     }
 }

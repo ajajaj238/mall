@@ -6,7 +6,7 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://${hm.db.host}:3306/hm-user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://${hm.db.host}:3309/hm-user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: ${hm.db.pw}
@@ -45,5 +45,5 @@ hm:
     location: classpath:hmall.jks
     alias: hmall
     password: hmall123
-    tokenTTL: 30m
+    tokenTTL: 7d
 

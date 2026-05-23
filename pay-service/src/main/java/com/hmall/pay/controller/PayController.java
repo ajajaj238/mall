@@ -43,7 +43,13 @@ public class PayController {
     @ApiOperation("根据id查询支付单")
     @GetMapping("/biz/{id}")
     public PayOrderDTO queryPayOrderByBizOrderNo(@PathVariable("id") Long id){
-        PayOrder payOrder = payOrderService.lambdaQuery().eq(PayOrder::getBizOrderNo, id).one();
+        PayOrder payOrder = payOrderService.queryPayOrderByBizOrderNo(id);
         return BeanUtils.copyBean(payOrder, PayOrderDTO.class);
+    }
+
+    @ApiOperation("关闭支付单")
+    @PutMapping("/biz/{id}/close")
+    public void closePayOrderByBizOrderNo(@PathVariable("id") Long id) {
+        payOrderService.closePayOrderByBizOrderNo(id);
     }
 }

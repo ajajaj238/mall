@@ -65,6 +65,17 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
+    public UserLoginVO getUserInfo(Long userId) {
+        User user = getById(userId);
+        Assert.notNull(user, "用户不存在");
+        UserLoginVO vo = new UserLoginVO();
+        vo.setUserId(user.getId());
+        vo.setUsername(user.getUsername());
+        vo.setBalance(user.getBalance());
+        return vo;
+    }
+
+    @Override
     public void deductMoney(String pw, Integer totalFee) {
         log.info("开始扣款");
         // 1.校验密码

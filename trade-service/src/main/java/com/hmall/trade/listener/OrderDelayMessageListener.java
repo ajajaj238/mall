@@ -42,6 +42,7 @@ public class OrderDelayMessageListener {
         }else {
             //未支付，则取消订单，恢复库存
             orderService.cancelOrder(orderId);
+            payClient.closePayOrderByBizOrderNo(orderId);
         }
 
 

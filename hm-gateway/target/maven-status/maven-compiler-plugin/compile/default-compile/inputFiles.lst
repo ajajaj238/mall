@@ -1,0 +1,7 @@
+E:\workplace\mall\hm-gateway\src\main\java\com\hmall\gateway\config\AuthProperties.java
+E:\workplace\mall\hm-gateway\src\main\java\com\hmall\gateway\GatewayApplication.java
+E:\workplace\mall\hm-gateway\src\main\java\com\hmall\gateway\filters\AuthGlobalFilter.java
+E:\workplace\mall\hm-gateway\src\main\java\com\hmall\gateway\utils\JwtTool.java
+E:\workplace\mall\hm-gateway\src\main\java\com\hmall\gateway\config\SecurityConfig.java
+E:\workplace\mall\hm-gateway\src\main\java\com\hmall\gateway\config\JwtProperties.java
+E:\workplace\mall\hm-gateway\src\main\java\com\hmall\gateway\filters\MyGlobalFilter.java

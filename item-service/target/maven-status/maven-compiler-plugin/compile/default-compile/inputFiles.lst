@@ -1,0 +1,11 @@
+E:\workplace\mall\item-service\src\main\java\com\hmall\item\domin\po\ItemDoc.java
+E:\workplace\mall\item-service\src\main\java\com\hmall\item\controller\SearchController.java
+E:\workplace\mall\item-service\src\main\java\com\hmall\item\domin\dto\OrderDetailDTO.java
+E:\workplace\mall\item-service\src\main\java\com\hmall\item\domin\po\Item.java
+E:\workplace\mall\item-service\src\main\java\com\hmall\item\domin\query\ItemPageQuery.java
+E:\workplace\mall\item-service\src\main\java\com\hmall\item\domin\dto\ItemDTO.java
+E:\workplace\mall\item-service\src\main\java\com\hmall\item\mapper\ItemMapper.java
+E:\workplace\mall\item-service\src\main\java\com\hmall\item\itemApplication.java
+E:\workplace\mall\item-service\src\main\java\com\hmall\item\controller\ItemController.java
+E:\workplace\mall\item-service\src\main\java\com\hmall\item\service\IItemService.java
+E:\workplace\mall\item-service\src\main\java\com\hmall\item\service\impl\ItemServiceImpl.java
