@@ -63,7 +63,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         // 1. 幂等性检测(如果前端传了Token才验证)
         Long userId = UserContext.getUser();
         String token = orderFormDTO.getIdempotentToken();
-        if (token != null && !token.isEmpty()) {
+        if (token == null && token.isEmpty()) {
             idempotentService.validateAndConsumeTokenOrThrow(token, userId);
         }
         

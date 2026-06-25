@@ -1,31 +1,25 @@
 package com.hmall.item.service.impl;
 
 import cn.hutool.json.JSONUtil;
-import com.alibaba.fastjson.JSON;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hmall.api.dto.ItemDTO;
 import com.hmall.api.dto.OrderDetailDTO;
 import com.hmall.common.domain.PageDTO;
-import com.hmall.common.exception.BizIllegalException;
 import com.hmall.common.utils.BeanUtils;
 import com.hmall.item.domin.po.Item;
 import com.hmall.item.domin.query.ItemPageQuery;
 import com.hmall.item.mapper.ItemMapper;
 import com.hmall.item.service.IItemService;
 import com.hmall.item.service.IItemStockService;
-import org.apache.http.HttpHost;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
-import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -50,9 +44,6 @@ public class ItemServiceImpl extends ServiceImpl<ItemMapper, Item> implements II
     @Autowired
     private IItemStockService itemStockService;
 
-    @Value("${hm.elasticsearch.host}")
-    private String elasticsearchHost;
-
     @Override
     @Transactional
     public void deductStock(List<OrderDetailDTO> items) {
@@ -68,10 +59,7 @@ public class ItemServiceImpl extends ServiceImpl<ItemMapper, Item> implements II
     // es
     @Override
     public PageDTO<ItemDTO> searchofes(ItemPageQuery query) throws IOException {
-
-        client = new RestHighLevelClient(RestClient.builder(
-                HttpHost.create(elasticsearchHost)
-        ));
+        long start = System.currentTimeMillis();
 
         SearchRequest request = new SearchRequest("items");
 
@@ -131,10 +119,7 @@ public class ItemServiceImpl extends ServiceImpl<ItemMapper, Item> implements II
         System.out.println("总页数:" + pages);
         page.setList(list);
 
-
-        if (client != null) {
-            client.close();
-        }
+        System.out.println("es耗时："+(System.currentTimeMillis()-start)+"ms");
         return page;
     }
 }

@@ -5,6 +5,7 @@ E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\constants\MQconsta
 E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\domin\vo\OrderVO.java
 E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\listener\PayStatusListener.java
 E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\service\IOrderDetailService.java
+E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\service\IdempotentService.java
 E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\service\IOrderLogisticsService.java
 E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\domin\po\OrderDetail.java
 E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\mapper\OrderDetailMapper.java
@@ -15,5 +16,6 @@ E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\service\IOrderServ
 E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\tradeApplication.java
 E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\mapper\OrderMapper.java
 E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\service\impl\OrderLogisticsServiceImpl.java
+E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\statemachine\OrderStateMachine.java
 E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\domin\dto\OrderFormDTO.java
 E:\workplace\mall\trade-service\src\main\java\com\hmall\trade\listener\OrderDelayMessageListener.java
